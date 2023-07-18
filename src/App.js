@@ -1,7 +1,9 @@
+import Home from "./screens/Home";
+
 function App() {
   return (
     <div>
-      Konoha Food Court
+      <Home/>
     </div>
   );
 }
