@@ -1,13 +1,24 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import React from "react";
+import Footer from "../components/Footer";
+import Card from "../components/Card";
+import Carousel from "./Carousel";
 
 export default function Home() {
   return (
     <div>
-        <Navbar/>
-        Konoha Food Court
-        <Footer/>
+      <div>
+        <Carousel/>
+      </div>
+      <div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
-  )
+  );
 }
