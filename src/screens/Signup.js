@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -33,10 +33,9 @@ export default function Signup() {
       }),
     });
     const responseData = await response.json();
-    if(responseData.success){
-        navigate("/login");
+    if (responseData.success) {
+      navigate("/login");
     }
-    console.log(responseData);
   };
 
   return (
@@ -54,6 +53,7 @@ export default function Signup() {
             onChange={handleOnChange}
             name="name"
             value={signUpCredintials.name}
+            required
           />
         </div>
         <div className="mb-3">
@@ -67,6 +67,7 @@ export default function Signup() {
             onChange={handleOnChange}
             name="location"
             value={signUpCredintials.location}
+            required
           />
         </div>
         <div className="mb-3">
@@ -81,6 +82,7 @@ export default function Signup() {
             onChange={handleOnChange}
             name="email"
             value={signUpCredintials.email}
+            required
           />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
@@ -97,11 +99,16 @@ export default function Signup() {
             onChange={handleOnChange}
             name="password"
             value={signUpCredintials.password}
+            required
+            minLength={5}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-danger">
           Signup
         </button>
+        <span className="ms-5">
+          Already a user ? <Link to="/login">Click here to Login</Link>
+        </span>
       </form>
     </div>
   );
