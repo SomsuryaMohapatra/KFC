@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function Signup() {
+  
   const navigate = useNavigate();
   const [signUpCredintials, setSignUpCredintials] = useState({
     name: "",
